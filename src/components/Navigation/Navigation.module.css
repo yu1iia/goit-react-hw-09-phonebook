@@ -5,6 +5,10 @@
   font-weight: 700;
   color: #2a363b;
 }
+.link:hover {
+  color: rgb(115, 115, 120);
+  text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+}
 
 .activeLink {
   color: rgb(115, 115, 120);

@@ -28,7 +28,7 @@ export default function RegisterView() {
   );
 
   return (
-    <div className={styles.signupForm}>
+    <div>
       <h1>Sign up page</h1>
 
       <form onSubmit={handleSubmit} className={styles.form} autoComplete="off">

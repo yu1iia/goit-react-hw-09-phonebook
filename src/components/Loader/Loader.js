@@ -1,22 +1,26 @@
-import React from "react";
+import React from 'react';
 
-import Section from "../Section";
+// import Section from '../Section';
 
-import Loader from "react-loader-spinner";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from 'react-loader-spinner';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+
+import styles from './Loader.module.css';
 
 const Loading = () => (
-  <Section>
+  <div className={styles.loaderContainer}>
     <Loader
       type="ThreeDots"
-      color="#303f9f"
+      color="#9e9d9d"
       height={50}
       width={50}
       className="loader"
+      backgroundColor="transparent"
       margin="20 auto"
       text-align="center"
+      transition="background-color 2s ease-out"
     />
-  </Section>
+  </div>
 );
 
 export default Loading;
