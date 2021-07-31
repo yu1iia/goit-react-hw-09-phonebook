@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+.avatar {
+  margin-right: 4px;
+}
+
+.name {
+  font-weight: 700;
+  margin-right: 12px;
+}
+.button {
+  background-color: rgba(179, 182, 178, 0.7);
+}

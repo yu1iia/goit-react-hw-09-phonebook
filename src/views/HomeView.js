@@ -1,11 +1,5 @@
-import React from 'react';
+import React from "react";
 
-import s from '../App.module.css';
-
-const HomeView = () => (
-  <div>
-    <h1 className={s.welcomeTitle}>YOUR PERSONAL PHONEBOOK</h1>
-  </div>
-);
+const HomeView = () => <div className="HomeView"></div>;
 
 export default HomeView;

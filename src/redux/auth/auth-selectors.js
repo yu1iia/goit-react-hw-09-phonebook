@@ -1,7 +1,10 @@
-const getIsAuthenticated = state => state.auth.isAuthenticated;
+const getIsAuthenticated = (state) => state.auth.isAuthenticated;
 
-const getUserMail = state => state.auth.user.email;
+const getUsername = (state) => state.auth.user.name;
 
-const authSelector = { getIsAuthenticated, getUserMail };
+const authSelectors = {
+  getIsAuthenticated,
+  getUsername,
+};
 
-export default authSelector;
+export default authSelectors;

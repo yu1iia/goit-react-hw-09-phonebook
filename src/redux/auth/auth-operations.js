@@ -1,7 +1,7 @@
 import axios from 'axios';
 import authActions from './auth-actions';
 
-axios.defaults.baseURL = 'https://goit-phonebook-api.herokuapp.com';
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
 const token = {
   set(token) {
@@ -12,21 +12,18 @@ const token = {
   },
 };
 
-//  После успешной регистрации добавляем токен в HTTP-заголовок
-
 const register = credentials => async dispatch => {
   dispatch(authActions.registerRequest());
 
   try {
     const response = await axios.post('/users/signup', credentials);
     token.set(response.data.token);
+
     dispatch(authActions.registerSuccess(response.data));
   } catch (error) {
     dispatch(authActions.registerError(error.message));
   }
 };
-
-// После успешного логина добавляем токен в HTTP-заголовок
 
 const logIn = credentials => async dispatch => {
   dispatch(authActions.loginRequest());
@@ -40,8 +37,6 @@ const logIn = credentials => async dispatch => {
   }
 };
 
-// После успешного логаута, удаляем токен из HTTP-заголовка
-
 const logOut = () => async dispatch => {
   dispatch(authActions.logoutRequest());
 
@@ -54,10 +49,6 @@ const logOut = () => async dispatch => {
   }
 };
 
-// 1. Забираем токен из стейта через getState()
-// 2. Если токена нет, выходим не выполняя никаких операций
-// 3. Если токен есть, добавляет его в HTTP-заголовок и выполянем операцию
-
 const getCurrentUser = () => async (dispatch, getState) => {
   const {
     auth: { token: persistedToken },
@@ -66,8 +57,8 @@ const getCurrentUser = () => async (dispatch, getState) => {
   if (!persistedToken) {
     return;
   }
-  token.set(persistedToken);
 
+  token.set(persistedToken);
   dispatch(authActions.getCurrentUserRequest());
 
   try {
@@ -79,5 +70,11 @@ const getCurrentUser = () => async (dispatch, getState) => {
   }
 };
 
-const authOperations = { register, logOut, logIn, getCurrentUser };
-export default authOperations;
+const authOperation = {
+  register,
+  logIn,
+  logOut,
+  getCurrentUser,
+};
+
+export default authOperation;

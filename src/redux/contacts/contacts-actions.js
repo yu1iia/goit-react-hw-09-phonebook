@@ -1,33 +1,30 @@
 import { createAction } from '@reduxjs/toolkit';
 
-const fetchContactsRequest = createAction('contacts/fetchContactRequest');
-const fetchContactsSuccess = createAction('contacts/fetchContactSuccess');
-const fetchContactsError = createAction('contacts/fetchContactError');
+const fetchContactRequest = createAction('fetchContactRequest');
+const fetchContactSuccess = createAction('fetchContactSuccess');
+const fetchContactError = createAction('fetchContactError');
 
-const createContactsRequest = createAction('contacts/createContactRequest');
-const createContactsSuccess = createAction('contacts/createContactSuccess');
-const createContactsError = createAction('contacts/createContactError');
+const addContactRequest = createAction('addContactRequest');
+const addContactSuccess = createAction('addContactSuccess');
+const addContactError = createAction('addContactError');
 
-const removeContactsRequest = createAction('contacts/removeContactRequest');
-const removeContactsSuccess = createAction('contacts/removeContactSuccess');
-const removeContactsError = createAction('contacts/removeContactError');
+const deleteContactRequest = createAction('deleteContactRequest');
+const deleteContactSuccess = createAction('deleteContactSuccess');
+const deleteContactError = createAction('deleteContactError');
 
-const changeFilter = createAction('CHANGE_FILTER');
+const changeFilter = createAction('contacts/Filter');
 
-const getFiltredContacts = createAction('GET_FILTRED_CONTACTS');
-
-const actions = {
-  fetchContactsRequest,
-  fetchContactsSuccess,
-  fetchContactsError,
-  createContactsRequest,
-  createContactsSuccess,
-  createContactsError,
-  removeContactsRequest,
-  removeContactsSuccess,
-  removeContactsError,
+const exports = {
+  addContactRequest,
+  addContactSuccess,
+  addContactError,
+  deleteContactRequest,
+  deleteContactSuccess,
+  deleteContactError,
   changeFilter,
-  getFiltredContacts,
+  fetchContactRequest,
+  fetchContactSuccess,
+  fetchContactError,
 };
 
-export default actions;
+export default exports;
